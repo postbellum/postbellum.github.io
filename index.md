@@ -1,37 +1,5 @@
-## Welcome to GitHub Pages
+## About Me
+Hi and welcome to my website. I'm Giovanni, a passionate IT engineering student from Pisa, Italy. I'm interested in the field of Math, Physics, AI, Computer Science, Cryptography and Philosophy. This is the corner of the internet where I present myself to the world and where you can find the projects and publications I make. Currently I'm contributing to some awesome projects like [IACR](https://iacr.org) and [EFF](https://eff.org). 
 
-You can use the [editor on GitHub](https://github.com/postbellum/postbellum.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/postbellum/postbellum.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+# Projects
+You can find my projects on my own [GitHub](https://gtihub.com/postbellum) repository. For any question feel free to contact me via mail : **proiectus AT siberia DOT net**.
