@@ -1,16 +1,10 @@
-/*  @font-face {
-  font-family: 'IBM Plex Medium';
-  font-style: normal;
-  font-weight: normal;
-  src: url('./IBMPlexMono-Medium.ttf') format('truetype'); }*/
-  
   html { 
       background-color: #CCBC8E; 
       color:#161510 ;
   }
 
   body {
-    font-family : 'Montserrat';
+        font-family : 'Montserrat';
 	max-width: 80ch;
 	margin: 2em auto;
 	padding: 0 1ch;
@@ -19,15 +13,12 @@
   p {
 	margin: 0 0 1em 4ch;
   }
-  
+
   a {
 	color: #CC241D;
 	text-decoration: none;
-}
+  }
 
-a:hover {
+  a:hover {
 	background-color: #1111;
-}
-
-
-
+  }
