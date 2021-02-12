@@ -1,1 +1,23 @@
-body{font-family:'Inconsolata', monospace;background-color: #282828;color:#fbf1c7;font-size:18px;margin:2em auto;max-width:800px;padding:1em;line-height:1.4;text-align:justify}a{color:#458588;text-decoration:none}a:hover{background-color:#1111;text-decoration:underline}ul li{height:1em}h2 {color:#689d6a;}
+body {
+	margin:40px auto;
+	max-width:66%;
+	line-height:1.6;
+	font-size:16px;
+	color:#414141;
+	background:#CFE0C3;
+	padding:0 10px
+}
+
+h1,h2,h3{
+	line-height:1.2;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+a {
+	color:#9C1900;
+	font-weight: 600;
+}
