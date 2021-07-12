@@ -74,12 +74,12 @@ p {
 /* Make links red */
 a,
 a:visited {
-  color: teal;
+  color: #1e90ff;
   text-decoration:none;
 }
 
 a:hover {
-  color: #E07A5F;
+  color: #ff8d1e;
   text-decoration:underline;
 }
 
