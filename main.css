@@ -7,22 +7,6 @@
 */
 
 @font-face {
-  font-family: 'EB Gardmond';
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/ebgaramond/v15/SlGDmQSNjdsmc35JDF1K5E55YMjF_7DPuGi-6_RkCY9_S6w.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'EB Gardmond';
-  font-style: italic;
-  font-weight: normal;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/ebgaramond/v15/SlGDmQSNjdsmc35JDF1K5E55YMjF_7DPuGi-6_RkCY9_S6w.woff2') format('woff2');
-}
-
-@font-face {
   font-family: 'Libertinus';
   font-style: normal;
   font-weight: 600;
