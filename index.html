@@ -1,34 +1,266 @@
-<!DOCTYPE HTML>
-<html lang=en>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <title>whoami | Postbellum</title>
-    <meta name="viewport" content="width=device-width", inital-scale=1>
-    <meta name="description" content= "Here you can find anything about me I want to share">
-    <link rel='stylesheet' type='text/css' href='main.css'>
-    <link rel="icon" href="icon.ico" type="image/x-icon"/>
-</head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="postbellum — engineering student from Italy.">
+<title>postbellum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,300;1,200&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:    #ECEDEF;
+  --fog:      #E0E2E5;
+  --mist:     #D0D3D8;
+  --ash:      #8A8F9A;
+  --iron:     #565B66;
+  --charcoal: #30333A;
+  --void:     #14151A;
+  --vein:     #7A1515;
+  --cond: 'Barlow Condensed', sans-serif;
+  --mono: 'Share Tech Mono', monospace;
+}
 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--charcoal);
+  font-family: var(--cond);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── LAYOUT ── */
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 80px 40px 80px;
+}
+
+/* ── HEADER ── */
+header { margin-bottom: 56px; border-left: 2px solid var(--vein); padding-left: 20px; }
+
+.site-name {
+  font-family: var(--cond);
+  font-weight: 100;
+  font-size: clamp(52px, 10vw, 80px);
+  letter-spacing: -.01em;
+  line-height: .9;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+
+.site-name em {
+  font-style: italic;
+  font-weight: 200;
+  color: var(--ash);
+}
+
+.site-sub {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ash);
+  margin-top: 14px;
+}
+
+/* ── SECTION ── */
+section { margin-bottom: 48px; }
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--ash);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--vein);
+  flex-shrink: 0;
+}
+
+/* ── LINK LIST ── */
+.link-list { display: flex; flex-direction: column; gap: 1px; background: var(--mist); }
+
+.link-row {
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  transition: background .15s;
+  gap: 16px;
+}
+
+.link-row:hover { background: var(--fog); }
+.link-row:hover .arrow { opacity: 1; transform: translate(2px, -2px); }
+
+.link-platform {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ash);
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.link-handle {
+  font-family: var(--cond);
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: .04em;
+  color: var(--charcoal);
+  flex: 1;
+}
+
+.arrow {
+  font-size: 12px;
+  color: var(--ash);
+  opacity: 0;
+  transition: opacity .15s, transform .15s;
+  flex-shrink: 0;
+}
+
+/* ── CONTACT ── */
+.email-box {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: var(--charcoal);
+  background: var(--fog);
+  border: 1px solid var(--mist);
+  border-left: 2px solid var(--vein);
+  padding: 12px 18px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.contact-note {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  color: var(--ash);
+  font-style: italic;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--void);
+  padding: 18px 40px;
+}
+
+.foot-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foot-sig {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #2A2D35;
+}
+
+.foot-links { display: flex; gap: 20px; list-style: none; }
+
+.foot-links a {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #2A2D35;
+  transition: color .15s;
+}
+
+.foot-links a:hover { color: var(--ash); }
+
+@media (max-width: 560px) {
+  main { padding: 48px 24px 64px; }
+  footer { padding: 16px 24px; }
+  .foot-inner { flex-direction: column; gap: 10px; }
+}
+</style>
+</head>
 <body>
-<p class="logo"><a href="/">POSTBELLUM</a></p>
- <p>Hi and welcome to my website. I'm an engineering student from Italy.</p>
-    
- <h2 id="platforms">platforms</h2>
-  <ul>
-  <li>GitHub: <a href="https://github.com/postbellum/">postbellum</a></li>
-  <li>Sourcehut: <a href="https://sr.ht/~postbellum">postbellum</a></li>
-  <li>Cogitatio: <a href="https://cogitatio.writeas.com/">personal blog</a></li>
-  </ul>
 
- <h2 id="social">social</h2>
-  <ul>
-  <li>X: <a href="https://x.com/intent/follow?screen_name=postbellum_">postbellum_</a></li>
-  <li>Mastodon: <a href="https://fosstodon.org/@postbellum">postbellum</a></li>
- </ul>
-    
- <hr>
-  <h2 id="contacts">contacts</h2>
-    <p>Please, do not necessarily expect a fast response:<br/></p>
-    <code>mailto: postbellum [at] protonmail [dot] com</code>
- </body>
+<main>
+  <header>
+    <div class="site-name">post<em>bellum</em></div>
+    <div class="site-sub">engineering student &nbsp;·&nbsp; italy</div>
+  </header>
+
+  <section aria-label="Platforms">
+    <div class="section-label">Platforms</div>
+    <div class="link-list">
+      <a href="https://github.com/postbellum/" target="_blank" rel="noopener noreferrer" class="link-row">
+        <span class="link-platform">GitHub</span>
+        <span class="link-handle">postbellum</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="https://sr.ht/~postbellum" target="_blank" rel="noopener noreferrer" class="link-row">
+        <span class="link-platform">Sourcehut</span>
+        <span class="link-handle">~postbellum</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="https://cogitatio.writeas.com/" target="_blank" rel="noopener noreferrer" class="link-row">
+        <span class="link-platform">Blog</span>
+        <span class="link-handle">Cogitatio</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section aria-label="Social">
+    <div class="section-label">Social</div>
+    <div class="link-list">
+      <a href="https://x.com/intent/follow?screen_name=postbellum_" target="_blank" rel="noopener noreferrer" class="link-row">
+        <span class="link-platform">X</span>
+        <span class="link-handle">postbellum_</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="https://fosstodon.org/@postbellum" target="_blank" rel="noopener noreferrer" class="link-row">
+        <span class="link-platform">Mastodon</span>
+        <span class="link-handle">@postbellum@fosstodon.org</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section aria-label="Contact">
+    <div class="section-label">Contact</div>
+    <div class="email-box">postbellum [at] protonmail [dot] com</div>
+    <p class="contact-note">Do not necessarily expect a fast response.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span class="foot-sig">postbellum</span>
+    <ul class="foot-links">
+      <li><a href="https://github.com/postbellum/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://fosstodon.org/@postbellum" target="_blank" rel="noopener noreferrer">Mastodon</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
 </html>
