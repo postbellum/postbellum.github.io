@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="postbellum — Energy Engineering student from Italy.">
+<link rel="icon" href="icon.ico" type="image/x-icon">
+<title>postbellum</title>
+
+<style>
+:root{
+  --night:#090a0c;
+  --ink:#101216;
+  --bone:#e5e0d6;
+  --dim:#8e8a83;
+  --wine:#8f2633;
+  --line:#2c2c2c;
+  --pad:clamp(14px,2.7vw,30px);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 72% 18%,rgba(143,38,51,.09),transparent 28rem),
+    linear-gradient(180deg,#0b0c0f 0%,var(--night) 48%,#07080a 100%);
+  color:var(--bone);
+  font-family:Arial,Helvetica,sans-serif;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.12;
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.015) 4px);
+}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--wine);color:var(--bone)}
+
+.shell{
+  width:min(1080px,100%);
+  margin:auto;
+  padding:var(--pad);
+}
+
+.masthead{
+  border-top:1px solid var(--line);
+}
+
+.topline{
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  border-bottom:1px solid var(--line);
+  color:var(--dim);
+  font:700 9px/1.2 "Courier New",monospace;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+}
+
+.status{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.status::before{
+  content:"";
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--wine);
+  box-shadow:0 0 14px rgba(143,38,51,.8);
+}
+
+.hero{
+  padding:clamp(15px,3vw,30px) 0 clamp(24px,5vw,56px);
+}
+h1{
+  margin:0;
+  font-size:clamp(54px,13.3vw,140px);
+  line-height:.78;
+  letter-spacing:-.075em;
+  text-transform:lowercase;
+  font-weight:900;
+  white-space:nowrap;
+}
+h1 span{color:var(--wine)}
+
+.identity{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);
+  gap:40px;
+  align-items:end;
+}
+.profile{
+  max-width:40ch;
+  color:#c9c4ba;
+  font-size:14px;
+  line-height:1.55;
+}
+.profile strong{
+  color:var(--bone);
+  font-weight:700;
+}
+
+.quote{
+  margin:0;
+  max-width:24ch;
+  justify-self:end;
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  font-size:clamp(19px,2.6vw,29px);
+  line-height:1.2;
+  letter-spacing:-.02em;
+  color:#d2cdc3;
+}
+.quote cite{
+  display:block;
+  margin-top:10px;
+  color:var(--dim);
+  font:700 9px/1.3 "Courier New",monospace;
+  font-style:normal;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.rule{
+  height:1px;
+  background:var(--line);
+}
+
+.content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:clamp(28px,6vw,72px);
+  row-gap:52px;
+  padding:48px 0 20px;
+}
+
+.section-title{
+  margin-bottom:22px;
+  color:var(--dim);
+  font:700 9px/1 "Courier New",monospace;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.section-title span{color:var(--wine)}
+
+.links{
+  border-top:1px solid var(--line);
+}
+.item{
+  display:grid;
+  grid-template-columns:78px minmax(0,1fr) auto;
+  gap:14px;
+  align-items:center;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+}
+.item small{
+  color:var(--dim);
+  font:700 9px/1 "Courier New",monospace;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.item strong{
+  min-width:0;
+  font-size:16px;
+  line-height:1.15;
+  overflow-wrap:anywhere;
+}
+.item i{
+  font-style:normal;
+  color:var(--dim);
+  transition:.15s ease;
+}
+.item:hover strong{color:#fff}
+.item:hover i{
+  color:var(--wine);
+  transform:translate(3px,-2px);
+}
+
+.project{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr) minmax(180px,260px);
+  gap:30px;
+  align-items:end;
+  padding:28px 0 34px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.project-no{
+  align-self:start;
+  color:var(--wine);
+  font:700 9px/1 "Courier New",monospace;
+  letter-spacing:.14em;
+}
+.project-name{
+  margin:0;
+  font-size:clamp(34px,5.2vw,58px);
+  line-height:.9;
+  letter-spacing:-.045em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.project-copy{
+  margin-top:13px;
+  max-width:48ch;
+  color:var(--dim);
+  font-size:13px;
+  line-height:1.55;
+}
+.project-link{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+  padding:13px 0;
+  border-top:1px solid var(--wine);
+  border-bottom:1px solid var(--wine);
+  color:#c8a5aa;
+  font:700 10px/1 "Courier New",monospace;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.project-link:hover{color:var(--bone)}
+
+.contact .email{
+  font:700 clamp(16px,2vw,21px)/1.25 "Courier New",monospace;
+  overflow-wrap:anywhere;
+}
+.note{
+  margin-top:12px;
+  color:var(--dim);
+  font-size:11px;
+  line-height:1.5;
+}
+
+footer{
+  margin-top:42px;
+  padding:16px 0 8px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:#66645f;
+  font:700 9px/1.2 "Courier New",monospace;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+footer nav{display:flex;gap:18px}
+footer a:hover{color:var(--wine)}
+
+@media(max-width:720px){
+  :root{--pad:14px}
+
+  .topline{
+    min-height:38px;
+    font-size:8px;
+    letter-spacing:.11em;
+  }
+
+  .hero{
+    padding:12px 0 26px;
+  }
+  h1{
+    font-size:clamp(48px,16.5vw,94px);
+    line-height:.82;
+    white-space:normal;
+  }
+
+  .identity{
+    margin-top:18px;
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .quote{
+    justify-self:start;
+    max-width:22ch;
+    font-size:21px;
+  }
+
+  .content{
+    grid-template-columns:1fr;
+    gap:36px;
+    padding-top:34px;
+  }
+
+  .project{
+    grid-column:auto;
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:24px 0 26px;
+  }
+  .project-no{margin-bottom:2px}
+  .project-name{
+    font-size:40px;
+    line-height:.92;
+  }
+  .project-copy{
+    margin-top:10px;
+  }
+  .project-link{
+    width:100%;
+    margin-top:2px;
+  }
+
+  .item{
+    grid-template-columns:66px minmax(0,1fr) auto;
+    gap:10px;
+  }
+
+  footer{
+    margin-top:34px;
+    flex-direction:column;
+    gap:12px;
+  }
+}
+
+@media(max-width:380px){
+  .topline{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:5px;
+    padding:9px 0;
+  }
+  h1{font-size:15.5vw}
+}
+</style>
+</head>
+
+<body>
+<div class="shell">
+
+<header class="masthead">
+  <div class="topline">
+    <span class="status">online</span>
+    <span>energy engineering · italy</span>
+  </div>
+
+  <div class="hero">
+    <h1>post<span>bellum</span></h1>
+
+    <div class="identity">
+      <div class="profile">
+        <strong>Energy Engineering student in Italy.</strong><br>
+        Interests around energy, physics, computation and the systems connecting them.
+      </div>
+
+      <blockquote class="quote">
+        Nox erat et caelo fulgebat Luna sereno<br>
+        inter minora sidera.
+        <cite>Horatius · Epodon XV</cite>
+      </blockquote>
+    </div>
+  </div>
+</header>
+
+<div class="rule"></div>
+
+<main class="content">
+
+  <section>
+    <div class="section-title"><span>01</span> · Platforms</div>
+    <div class="links">
+      <a class="item" href="https://github.com/postbellum/" target="_blank" rel="noopener noreferrer">
+        <small>GitHub</small><strong>postbellum</strong><i>↗</i>
+      </a>
+      <a class="item" href="https://sr.ht/~postbellum" target="_blank" rel="noopener noreferrer">
+        <small>Sourcehut</small><strong>~postbellum</strong><i>↗</i>
+      </a>
+      <a class="item" href="https://cogitatio.writeas.com/" target="_blank" rel="noopener noreferrer">
+        <small>Blog</small><strong>Cogitatio</strong><i>↗</i>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><span>02</span> · Social</div>
+    <div class="links">
+      <a class="item" href="https://x.com/intent/follow?screen_name=postbellum_" target="_blank" rel="noopener noreferrer">
+        <small>X</small><strong>postbellum_</strong><i>↗</i>
+      </a>
+      <a class="item" href="https://fosstodon.org/@postbellum" target="_blank" rel="noopener noreferrer">
+        <small>Mastodon</small><strong>@postbellum</strong><i>↗</i>
+      </a>
+    </div>
+  </section>
+
+  <section class="project">
+    <div class="project-no">03 · PROJECT</div>
+
+    <div>
+      <h2 class="project-name">Miller 3D</h2>
+      <div class="project-copy">
+        Interactive 3D visualizer for crystallographic planes and Miller indices inside a cubic unit cell. Built with Three.js.
+      </div>
+    </div>
+
+    <a class="project-link" href="https://github.com/postbellum/miller-index-3D" target="_blank" rel="noopener noreferrer">
+      <span>Open project</span><span>↗</span>
+    </a>
+  </section>
+
+  <section class="contact">
+    <div class="section-title"><span>04</span> · Contact</div>
+    <div class="email">postbellum [at] protonmail [dot] com</div>
+    <div class="note">Do not necessarily expect a fast response.</div>
+  </section>
+
+</main>
+
+<footer>
+  <span>postbellum / 2026</span>
+  <nav>
+    <a href="https://github.com/postbellum/" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://fosstodon.org/@postbellum" target="_blank" rel="noopener noreferrer">Mastodon</a>
+  </nav>
+</footer>
+
+</div>
+</body>
+</html>
